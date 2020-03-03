@@ -59,7 +59,7 @@ omnitest <- function(correctExpr=NULL, correctVal=NULL, strict=FALSE){
   if(!is.null(correctVal)){
     if(is.character(e$val)){
       valResults <- expectThat(e$val,
-                               is_equivalent_to(correctVal, label=correctVal),
+                               is_equivalent_to_legacy(correctVal, label=correctVal),
                                label=(e$val))
       if(is(e, "dev") && !valResults$passed)swirl_out(valResults$message)
       valGood <- valResults$passed
